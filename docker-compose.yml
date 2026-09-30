@@ -1,0 +1,15 @@
+services:
+
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: tyba-data-pipeline
+
+    volumes:
+      - ./data/output:/app/data/output
+
+    command:
+      - python
+      - /app/src/main.py 
